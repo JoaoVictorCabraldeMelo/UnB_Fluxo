@@ -1,0 +1,264 @@
+Calculo1{
+    113034
+    6
+    PreRequisitos:
+}
+IntroducaoSistemasComputacionais{
+    113468
+    4
+    PreRequisitos:
+}
+FundamentosTeoricosDaComputacao{
+    113450
+    4
+    PreRequisitos:
+}
+AlgoritmoProgComputadores{
+    113476
+    6
+    PreRequisitos:
+}
+InformaticaeSociedade{
+    116726
+    2
+    PreRequisitos:
+}
+CircuitosLogicos{
+    129011
+    4
+    PreRequisitos:
+        AlgoritmoProgComputadores
+        113476
+        6
+}
+LabCircuitosLogicos{
+    129020
+    2
+    PreRequisitos:
+        AlgoritmoProgComputadores
+        113476
+        6
+}
+
+EstruturaDeDados{
+    116319
+    4
+    PreRequisitos:
+        AlgoritmoProgComputadores
+        113476
+        6
+}
+Calculo2{
+    113042
+    6
+    PreRequisitos:
+        Calculo1
+        113034
+        6
+
+}
+IntroducaoAlgebraLinear{
+    113093
+    4
+    PreRequisitos:
+}
+OrganizacaoArquivoDeComputadores{
+    116394
+    4
+    PreRequisitos:
+        CircuitosLogicos
+            129011
+            4,
+        LabCircuitosLogicos
+            129020
+            2
+}
+TecnicasDeProgamacao1{
+    117889
+    4
+    PreRequisitos:
+        EstruturaDeDados
+            116319
+            4
+}
+Algebra1{
+    113107
+    4
+    PreRequisitos:
+}
+CalculoNumerico{
+    113417
+    4
+    PreRequisitos:
+        Calculo2
+            113042
+            6
+}
+ProbabilidadeEstatistica{
+    115045
+    4
+    PreRequisitos:
+        Calculo1
+        113034
+        6
+}
+LogicaComputacional{
+    117366
+    4
+    PreRequisitos:
+        EstruturaDeDados
+            116319
+            4    
+}
+TecnicasDeProgamacao2{
+    117897
+    4
+    PreRequisitos:
+        TecnicasDeProgamacao1
+            117889
+            4
+
+}
+TeoriaEAplicacaoDeGrafos{
+    117901
+    4
+    PreRequisitos:
+        EstruturaDeDados
+            116319
+            4    
+}
+RedesDeComputadores{
+    116572
+    4
+    PreRequisitos:
+        ProbabilidadeEstatistica
+                115045
+                4
+}
+LinguagensDeProgamcao{
+    116343
+    4
+    PreRequisitos:
+        EstruturaDeDados
+            116319
+            4    
+}
+ProgamacaoConcorrente{
+    117935
+    4
+    PreRequisitos:
+        TecnicasDeProgamacao2
+                117897
+                4,
+        OrganizacaoArquivoDeComputadores
+                    116394
+                    4    
+}
+EngenhariaDeSoftware{
+    116441
+    4
+    PreRequisitos:
+        TecnicasDeProgamacao1
+            117889
+            4
+}
+BancoDeDados{
+    116378
+    4
+    PreRequisitos:
+}
+IntroducaoAInteligenciaArtificial{
+    116653
+    4
+    PreRequisitos:
+        EstruturaDeDados
+            116319
+            4    
+}
+SoftwareBasico{
+    116432
+    4
+    PreRequisitos:
+        OrganizacaoArquivoDeComputadores
+                    116394
+                    4,
+        EstruturaDeDados
+            116319
+            4    
+}
+FundamentosSistemasOperacionais{
+    11960
+    4
+    PreRequisitos:
+        ProgamacaoConcorrente
+            117935
+            4
+}
+AutomatosEComputabilidade{
+    116882
+    6
+    PreRequisitos:
+        Algebra1
+            113107
+            4  
+}
+SistemasDeInformacao{
+    116416
+    4
+    PreRequisitos:
+        EstruturaDeDados
+            116319
+            4    
+}
+ComputacaoExperimental{
+    117943
+    4
+    PreRequisitos:
+        ProbabilidadeEstatistica
+                115045
+                4,
+        EstruturaDeDados
+            116319
+            4        
+}
+ProjetoEAnaliseDeAlgoritmos{
+    117536
+    4
+    PreRequisitos:
+        Calculo1
+        113034
+        6
+}
+Compiladores{
+    117951
+    4
+    PreRequisitos:
+        LinguagensDeProgamcao
+            116343
+            4,
+        AutomatosEComputabilidade
+            116882
+            6,
+        SoftwareBasico
+            116432
+            4
+
+}
+SegurancaComputacional{
+    117927
+    4
+    PreRequisitos:
+        RedesDeComputadores
+            116572
+            4
+}
+MetodologiaCientifica{
+    117919
+    2
+    PreRequisitos:
+}
+TopicosAvancadosEmComputadores{
+    116921
+    4
+    PreRequisitos:
+}
