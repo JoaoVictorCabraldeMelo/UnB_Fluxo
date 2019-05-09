@@ -55,7 +55,6 @@ Calculo2{
         Calculo1
         113034
         6
-
 }
 IntroducaoAlgebraLinear{
     113093
@@ -68,7 +67,7 @@ OrganizacaoArquivoDeComputadores{
     PreRequisitos:
         CircuitosLogicos
             129011
-            4,
+            4
         LabCircuitosLogicos
             129020
             2
@@ -117,7 +116,6 @@ TecnicasDeProgamacao2{
         TecnicasDeProgamacao1
             117889
             4
-
 }
 TeoriaEAplicacaoDeGrafos{
     117901
@@ -149,7 +147,7 @@ ProgamacaoConcorrente{
     PreRequisitos:
         TecnicasDeProgamacao2
                 117897
-                4,
+                4
         OrganizacaoArquivoDeComputadores
                     116394
                     4    
@@ -181,7 +179,7 @@ SoftwareBasico{
     PreRequisitos:
         OrganizacaoArquivoDeComputadores
                     116394
-                    4,
+                    4
         EstruturaDeDados
             116319
             4    
@@ -216,7 +214,7 @@ ComputacaoExperimental{
     PreRequisitos:
         ProbabilidadeEstatistica
                 115045
-                4,
+                4
         EstruturaDeDados
             116319
             4        
@@ -235,14 +233,13 @@ Compiladores{
     PreRequisitos:
         LinguagensDeProgamcao
             116343
-            4,
+            4
         AutomatosEComputabilidade
             116882
-            6,
+            6
         SoftwareBasico
             116432
             4
-
 }
 SegurancaComputacional{
     117927
