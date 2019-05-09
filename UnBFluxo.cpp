@@ -32,7 +32,7 @@ unbFluxo graphCreate(unbFluxo CiC){
                 while(line[0] != '}'){ //Pega todas as materias ate o fecha chaves 
                     getline(myfile,line); //Pega todas as linhas  
                     if(line[0] != '}'){ //Pega so os valores dos PreRequisitos
-                        pre_materia.nome = line;
+                        pre_materia.nome = line; 
                         getline(myfile,line);
                         pre_materia.id = stoi(line);
                         getline(myfile,line);
@@ -77,8 +77,6 @@ int main() {
     unbFluxo CiC;
 
     CiC = graphCreate(CiC);
-
-    cout << CiC.size() << endl;
 
     printaGrafo(CiC);
 
