@@ -1,261 +1,108 @@
-Calculo1{
-    113034
-    6
-    PreRequisitos:
-}
-IntroducaoSistemasComputacionais{
-    113468
-    4
-    PreRequisitos:
-}
-FundamentosTeoricosDaComputacao{
-    113450
-    4
-    PreRequisitos:
-}
-AlgoritmoProgComputadores{
-    113476
-    6
-    PreRequisitos:
-}
-InformaticaeSociedade{
-    116726
-    2
-    PreRequisitos:
-}
-CircuitosLogicos{
-    129011
-    4
-    PreRequisitos:
-        AlgoritmoProgComputadores
-        113476
-        6
-}
-LabCircuitosLogicos{
-    129020
-    2
-    PreRequisitos:
-        AlgoritmoProgComputadores
-        113476
-        6
-}
-
-EstruturaDeDados{
-    116319
-    4
-    PreRequisitos:
-        AlgoritmoProgComputadores
-        113476
-        6
-}
-Calculo2{
-    113042
-    6
-    PreRequisitos:
-        Calculo1
-        113034
-        6
-}
-IntroducaoAlgebraLinear{
-    113093
-    4
-    PreRequisitos:
-}
-OrganizacaoArquivoDeComputadores{
-    116394
-    4
-    PreRequisitos:
-        CircuitosLogicos
-            129011
-            4
-        LabCircuitosLogicos
-            129020
-            2
-}
-TecnicasDeProgamacao1{
-    117889
-    4
-    PreRequisitos:
-        EstruturaDeDados
-            116319
-            4
-}
-Algebra1{
-    113107
-    4
-    PreRequisitos:
-}
-CalculoNumerico{
-    113417
-    4
-    PreRequisitos:
-        Calculo2
-            113042
-            6
-}
-ProbabilidadeEstatistica{
-    115045
-    4
-    PreRequisitos:
-        Calculo1
-        113034
-        6
-}
-LogicaComputacional{
-    117366
-    4
-    PreRequisitos:
-        EstruturaDeDados
-            116319
-            4    
-}
-TecnicasDeProgamacao2{
-    117897
-    4
-    PreRequisitos:
-        TecnicasDeProgamacao1
-            117889
-            4
-}
-TeoriaEAplicacaoDeGrafos{
-    117901
-    4
-    PreRequisitos:
-        EstruturaDeDados
-            116319
-            4    
-}
-RedesDeComputadores{
-    116572
-    4
-    PreRequisitos:
-        ProbabilidadeEstatistica
-                115045
-                4
-}
-LinguagensDeProgamcao{
-    116343
-    4
-    PreRequisitos:
-        EstruturaDeDados
-            116319
-            4    
-}
-ProgamacaoConcorrente{
-    117935
-    4
-    PreRequisitos:
-        TecnicasDeProgamacao2
-                117897
-                4
-        OrganizacaoArquivoDeComputadores
-                    116394
-                    4    
-}
-EngenhariaDeSoftware{
-    116441
-    4
-    PreRequisitos:
-        TecnicasDeProgamacao1
-            117889
-            4
-}
-BancoDeDados{
-    116378
-    4
-    PreRequisitos:
-}
-IntroducaoAInteligenciaArtificial{
-    116653
-    4
-    PreRequisitos:
-        EstruturaDeDados
-            116319
-            4    
-}
-SoftwareBasico{
-    116432
-    4
-    PreRequisitos:
-        OrganizacaoArquivoDeComputadores
-                    116394
-                    4
-        EstruturaDeDados
-            116319
-            4    
-}
-FundamentosSistemasOperacionais{
-    117960
-    4
-    PreRequisitos:
-        ProgamacaoConcorrente
-            117935
-            4
-}
-AutomatosEComputabilidade{
-    116882
-    6
-    PreRequisitos:
-        Algebra1
-            113107
-            4  
-}
-SistemasDeInformacao{
-    116416
-    4
-    PreRequisitos:
-        EstruturaDeDados
-            116319
-            4    
-}
-ComputacaoExperimental{
-    117943
-    4
-    PreRequisitos:
-        ProbabilidadeEstatistica
-                115045
-                4
-        EstruturaDeDados
-            116319
-            4        
-}
-ProjetoEAnaliseDeAlgoritmos{
-    117536
-    4
-    PreRequisitos:
-        Calculo1
-        113034
-        6
-}
-Compiladores{
-    117951
-    4
-    PreRequisitos:
-        LinguagensDeProgamcao
-            116343
-            4
-        AutomatosEComputabilidade
-            116882
-            6
-        SoftwareBasico
-            116432
-            4
-}
-SegurancaComputacional{
-    117927
-    4
-    PreRequisitos:
-        RedesDeComputadores
-            116572
-            4
-}
-MetodologiaCientifica{
-    117919
-    2
-    PreRequisitos:
-}
-TopicosAvancadosEmComputadores{
-    116921
-    4
-    PreRequisitos:
-}
+34
+Calculo 1
+113034 0 6
+Introducao aos Sistemas Computacionais
+113468 0 4
+Fundamentos Teoricos da Computacao
+113450 0 4
+Algoritmo Programacao Computadores
+113476 0 6
+Informatica e Sociedade
+116726 0 2
+Circuitos Logicos
+129011 1 4
+Laboratorio de Circuitos Logicos
+129020 1 2
+Estrutura de Dados
+116319 1 4
+Calculo 2
+113042 1 6
+Introducao Algebra Linear
+113093 0 4
+Organizacao e Arquitetura de Computadores
+116394 2 4
+Tecnicas de Progamacao 1
+117889 1 4
+Algebra 1
+113107 0 4
+Calculo Numerico
+113417 1 4
+Probabilidade Estatistica
+115045 1 4
+Logica Computacional 1
+117366 1 4
+Tecnicas de Progamacao 2
+117897 1 4
+Teoria e Aplicacao de Grafos
+117901 1 4
+Redes de Computadores
+116572 3 4
+Linguagens de Progamcao
+116343 1 4
+Progamacao Concorrente
+117935 2 4
+Engenharia de Software
+116441 1 4
+Banco de Dados
+116378 1 4
+Introducao a Inteligencia Artificial
+116653 1 4
+Software Basico
+116432 2 4
+Fundamentos de Sistemas Operacionais
+117960 1 4
+Automatos e Computabilidade
+116882 1 6
+Sistemas de Informacao
+116416 1 4
+Computacao Experimental
+117943 2 4
+Projeto e Analise de Algoritmos
+117536 2 4
+Compiladores
+117951 3 4
+Seguranca Computacional
+117927 1 4
+Metodologia Cientifica
+117919 0 2
+Topicos Avancados em Computadores
+116921 0 4
+38
+129011 113476
+129020 113476
+116319 113476
+113042 113034
+116394 129020
+116394 129011
+117889 116319
+113417 113042
+115045 113034
+117366 116319
+117366 113450
+117897 117889
+117901 116319
+116572 113042
+116572 116319
+116572 115045
+116343 116319
+117935 116394
+117935 116343
+116441 116343
+116441 117889
+116378 116319
+116653 116319
+116432 116394
+116432 116319
+117960 117935
+116882 113107
+116416 116319
+116416 116378
+117943 116319
+117943 115045
+117536 117889
+117536 116319
+117536 117889
+117951 116343
+117951 116432
+117951 116882
+117927 116572
