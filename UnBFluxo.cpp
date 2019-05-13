@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
 
@@ -63,13 +62,12 @@ pair<vector<Materia>, pair<Grafo, Grafo>> graphCreate(string nomeArquivo){
 }
 
 
-int main() {
-
+int main(int argc, char *argv[]) {
     auto grafoTotal = graphCreate("materias.txt");
     auto &materias = grafoTotal.first;
     auto &grafo = grafoTotal.second.first;
     auto &grafoInverso = grafoTotal.second.second;
-
+    
     stack<int> atuais;
     vector<int> preReg(materias.size()), ordem(materias.size());
     vector<pair<int, int>> caminhoCritico(materias.size() , {0, 0});
@@ -105,7 +103,6 @@ int main() {
             }
         }
     }
-
     for(auto&p : ordem){
         cout << "-------------------------\n";
         cout << "nome\t" << materias[p].nome << '\n';
@@ -114,6 +111,7 @@ int main() {
         cout << "Numero de Requisitos\t" << materias[p].numReq << '\n';
         cout << "-------------------------\n";
     }
+
 
 
     queue<int> fila;
@@ -141,6 +139,7 @@ int main() {
             if(caminhoCritico[a].first + materias[p].creditos > caminhoCritico[p].first){
                 caminhoCritico[p].first = caminhoCritico[a].first + materias[p].creditos;
                 caminhoCritico[p].second = a; 
+                cerr <<  materias[a].nome << " | " << materias[p].nome << '\n';
             }
         }
     }
@@ -170,7 +169,6 @@ int main() {
         cout << "Numero de Requisitos\t" << materias[p].numReq << '\n';
         cout << "-------------------------\n";
     }
-
 
 
 
