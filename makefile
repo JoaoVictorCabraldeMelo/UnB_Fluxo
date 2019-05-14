@@ -1,5 +1,5 @@
 CXXVERSION = 14
-CFLAGS= -std=c++$(CXXVERSION) -Wall -g 
+CFLAGS= -std=c++$(CXXVERSION)  -g 
 FLAGS=`pkg-config libgvc --cflags`
 LDFLAGS=`pkg-config libgvc --libs`
 

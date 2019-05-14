@@ -56,6 +56,13 @@ class DotGenerator{
                 e[i] = agedge(g, mapa[nome2], mapa[nome1], 0, 1);
             }
         }
+        void createEdge(const vector<pair<string, string>> &vetor){
+            for(int i = 0; i < vetor.size(); ++i){
+                string nome1 = vetor[i].first;
+                string nome2 = vetor[i].second;
+                e[i] = agedge(g, mapa[nome2], mapa[nome1], 0, 1);
+            }
+        }
         void write(void *canal){
             agwrite(g, canal);
         }
@@ -68,10 +75,11 @@ class DotGenerator{
 typedef vector<int> vertex; //Abstração Vertices do Grafo
 typedef vector<vertex> Grafo; //Abstração o Grafo 
 
-pair<  vector<Materia> , pair<  Grafo, vector<pair<int, int>>  >  > graphCreate(string nomeArquivo){
+pair<pair<string, vector<Materia>> , pair<Grafo, vector<pair<int, int>>>> graphCreate(string nomeArquivo){
     
-    pair<  vector<Materia> , pair<  Grafo, vector<pair<int, int>>  >  >  res;
-    auto &materias = res.first;
+    pair<pair<string, vector<Materia>> , pair<Grafo, vector<pair<int, int>>>>  res;
+    auto &nomeDoGrafo = res.first.first;
+    auto &materias = res.first.second;
     auto &arestas = res.second.second;
     auto &grafo = res.second.first;
     ifstream myfile(nomeArquivo);
@@ -81,6 +89,8 @@ pair<  vector<Materia> , pair<  Grafo, vector<pair<int, int>>  >  > graphCreate(
 
     if(myfile.is_open()){ //verifico se o arquivo esta aberto
         getline(myfile,line);
+        nomeDoGrafo = line;
+        getline(myfile,line);        
         aux = stoi(line);
         materias.resize(aux);
         grafo.resize(aux);
@@ -116,7 +126,8 @@ pair<  vector<Materia> , pair<  Grafo, vector<pair<int, int>>  >  > graphCreate(
 
 int main(int argc, char *argv[]) {
     auto grafoTotal = graphCreate("materias.txt");
-    auto &materias = grafoTotal.first;
+    auto &nomeDoGrafo = grafoTotal.first.first;
+    auto &materias = grafoTotal.first.second;
     auto &arestas = grafoTotal.second.second;
     auto &grafo = grafoTotal.second.first;
     DotGenerator *dot1;
@@ -168,6 +179,8 @@ int main(int argc, char *argv[]) {
             }
         }
     }
+    cout << "Curso " << nomeDoGrafo << endl;
+    cout << "Ordenacao topologia para o curso de " << nomeDoGrafo << endl;
     for(auto&p : ordem){
         cout << "-------------------------\n";
         cout << "nome\t" << materias[p].nome << '\n';
@@ -199,12 +212,10 @@ int main(int argc, char *argv[]) {
             if(preReg[p] == 0){
                 preReg[p] = -1;
                 fila.push(p);
-                //++indOrdem;
             }
             if(caminhoCritico[a].first + materias[p].creditos > caminhoCritico[p].first){
                 caminhoCritico[p].first = caminhoCritico[a].first + materias[p].creditos;
                 caminhoCritico[p].second = a; 
-                cerr <<  materias[a].nome << " | " << materias[p].nome << '\n';
             }
         }
     }
@@ -223,14 +234,15 @@ int main(int argc, char *argv[]) {
         proximo = caminhoCritico[proximo].second;
     }
     reverse(ordemCCritico.begin(), ordemCCritico.end());
-    vector<pair<int, int>> arestas2(ordemCCritico.size()-1);
+    vector<pair<string, string>> arestas2(ordemCCritico.size()-1);
     for(int i = 0; i < ordemCCritico.size() - 1; ++i){
-        arestas2[i] = {materias[ordemCCritico[i]].codigo, 
-          materias[ordemCCritico[i+1]].codigo};
+        arestas2[i] = {to_string(materias[ordemCCritico[i+1]].codigo) + " | " + to_string(materias[ordemCCritico[i+1]].creditos), 
+          to_string(materias[ordemCCritico[i]].codigo) + " | " + to_string(materias[ordemCCritico[i]].creditos)};
     }
+    
     dot1 = new DotGenerator(ordemCCritico.size(), ordemCCritico.size()-1, "Caminho Critco");
     dot1->createNode(ordemCCritico, function<string(const int&)>([&materias](const int &materia) -> string{
-        return to_string(materias[materia].codigo);
+        return to_string(materias[materia].codigo) + " | " + to_string(materias[materia].creditos);
     }));
     dot1->createEdge(arestas2);
     fp = fopen("CaminhoCritco.dot", "w");
@@ -240,7 +252,7 @@ int main(int argc, char *argv[]) {
     delete dot1;
 
     cout << endl << endl;
-    cout << "O tamanho do caminho critico eh " << ordemCCritico.size() << " com peso " << maximo.first << endl;
+    cout << "Caminho critico para o curso de " << nomeDoGrafo << " com peso " << maximo.first << endl;
     for(auto&p : ordemCCritico){
         cout << "-------------------------\n";
         cout << "nome\t" << materias[p].nome << '\n';
@@ -249,6 +261,7 @@ int main(int argc, char *argv[]) {
         cout << "Numero de Requisitos\t" << materias[p].numReq << '\n';
         cout << "-------------------------\n";
     }
+    cout << "Curso " << nomeDoGrafo << endl;
 
 
 
